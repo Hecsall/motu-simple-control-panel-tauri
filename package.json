@@ -1,0 +1,30 @@
+{
+  "name": "motu-simple-control-panel-tauri",
+  "version": "0.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=17 <19",
+    "npm": ">=8"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "export": "next export",
+    "start": "next start",
+    "tauri": "tauri",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@svgr/webpack": "8.0.1",
+    "@tauri-apps/api": "1.4.0",
+    "eslint": "8.44.0",
+    "eslint-config-next": "13.4.10",
+    "next": "13.4.10",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "sass": "1.63.6"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "1.4.0"
+  }
+}

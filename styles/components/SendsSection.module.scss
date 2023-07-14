@@ -1,0 +1,13 @@
+.sendsSection {
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 15px;
+    
+    .buttons {
+        margin-top: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}

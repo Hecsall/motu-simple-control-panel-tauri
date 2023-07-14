@@ -1,0 +1,92 @@
+@use '../variables.scss' as variables;
+
+$fader-track-width: 20px;
+$fader-track-radius: 10px;
+$fader-track-outer-border: 3px;
+$fader-fill-space-around: 4px;
+$fader-thumb-width: $fader-track-width;
+$fader-thumb-height: $fader-track-width;
+
+.fader-wrapper {
+    height: 400px;
+    width: $fader-track-width;
+    position: relative;
+    margin-bottom: 15px;
+    background-color: transparent;
+    border-radius: calc(($fader-track-width + ($fader-track-outer-border * 2)) / 2);
+    border: solid $fader-track-outer-border white;
+    box-sizing: content-box;
+  
+    &:hover {
+      .fill-bar {
+        background-color: greenyellow;
+      }
+    }
+  
+    span {
+      position: absolute;
+      bottom: 10px;
+      left: -8px;
+      transform-origin: left bottom;
+      transform: rotate(-90deg);
+      pointer-events: none;
+    }
+  
+    .fill-bar {
+      position: absolute;
+      bottom: $fader-fill-space-around;
+      left: 50%;
+      width: calc($fader-track-width - ($fader-fill-space-around * 2));
+      height: 400px;
+      transform: translateX(-50%);
+      background-color: white;
+      border-radius: $fader-track-radius;
+    }
+  
+    input.fader {
+      width: 400px;
+      margin: 0;
+      appearance: none;
+      background: transparent;
+      cursor: pointer;
+      box-sizing: border-box;
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-90deg);
+  
+      &::-webkit-slider-runnable-track {
+        width: 400px;
+        height: $fader-track-width;
+        outline: none;
+        border-radius: 5px;
+        border: none;
+        // Center thumb
+        display: flex;
+        align-items: center;  
+      }
+  
+      &::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        width: $fader-thumb-height;
+        height: $fader-thumb-width;
+        border-radius: $fader-track-radius;
+        background-color: white;
+        cursor: pointer;
+        opacity: 0;
+        
+        // &:hover {
+        //   transition: all 0.3s ease;
+        //   transform: scale(1.2);
+        // }
+      }
+  
+    }
+  }
+  
+  .fader-value {
+    margin-bottom: 10px;
+    pointer-events: none;
+    font-size: 14px;
+  }
